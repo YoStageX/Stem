@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Moodify - Spotify Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <h2>Moodify 🎵</h2>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Search</a>
+        <a href="#">Library</a>
+        <a href="#">Create Playlist</a>
+        <a href="#">Liked Songs</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header>
+        <input type="text" placeholder="Search for songs, artists..." />
+      </header>
+
+      <section class="playlist">
+        <h3>Featured Playlist</h3>
+        <div class="song-list">
+          <div class="song-card" onclick="playSong('song1.mp3', this)">
+            <img src="cover1.jpg" alt="Cover">
+            <div class="song-info">
+              <h4>Night Changes</h4>
+              <p>One Direction</p>
+            </div>
+          </div>
+
+          <div class="song-card" onclick="playSong('song2.mp3', this)">
+            <img src="cover2.jpg" alt="Cover">
+            <div class="song-info">
+              <h4>Shivers</h4>
+              <p>Ed Sheeran</p>
+            </div>
+          </div>
+
+          <!-- Add more songs -->
+        </div>
+      </section>
+    </main>
+
+    <footer class="player">
+      <div id="now-playing">No song playing</div>
+      <div class="controls">
+        <button onclick="togglePlay()">▶ / ⏸</button>
+        <input type="range" id="progress" value="0" onchange="seekSong(this)">
+      </div>
+      <audio id="audio"></audio>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
